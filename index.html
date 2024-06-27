@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Minecraft</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Minecraft</h1>
+        <p>Get the latest version of Minecraft by clicking the button below.</p>
+        <a href="#" class="download-btn">Download Minecraft</a>
+
+        <h2>Buy Minecraft</h2>
+        <form id="purchase-form">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" name="card-name" required>
+
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" required>
+
+            <label for="card-expiry">Expiry Date (MM/YY)</label>
+            <input type="text" id="card-expiry" name="card-expiry" required>
+
+            <label for="card-cvc">CVC</label>
+            <input type="text" id="card-cvc" name="card-cvc" required>
+
+            <button type="submit">Buy Now</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script>
+        document.getElementById('purchase-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const cardName = document.getElementById('card-name').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const cardExpiry = document.getElementById('card-expiry').value;
+            const cardCvc = document.getElementById('card-cvc').value;
+
+            if (cardName && cardNumber && cardExpiry && cardCvc) {
+                document.getElementById('message').innerText = 'Payment processed successfully!';
+            } else {
+                document.getElementById('message').innerText = 'Please fill in all fields.';
+            }
+        });
+    </script>
+</body>
+</html>
